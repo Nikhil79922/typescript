@@ -47,11 +47,8 @@ class Box<T>{
 const numberbox=new Box<number>(2)
 console.log(numberbox.getContents())
 
-
 const stringbox=new Box<string>("Boxxy")
 console.log(stringbox.getContents())
-
-
 
 class stack<T>{
     private item:T[]=[];
@@ -60,6 +57,7 @@ class stack<T>{
         this.item.push(item)
     }
     pop():T|undefined{
+
         return this.item.pop();
     }
     getStack():T[]{
