@@ -53,11 +53,11 @@ function logmessage():void{
 
 // Type infernece  
 let user : "Nikhil";
-// user =1;  error , it is assigned as string 
+// user =1; error , it is assigned as string 
 
 // Type assertions
 let strvalue: any = "Hello world";
-let strLenght:number =(strvalue as string).length;//specifying the datatype of varibale   explicitively
+let strLenght:number =(strvalue as string).length;//specifying the datatype of varibale explicitively
 
 // Union type
 let union : string | number;
@@ -114,3 +114,113 @@ console.log(sub(3,2));
 //type alias
 // type aliasName =TypeDefination ; //syntax 
 
+type UserID= string;
+const ID : UserID="2";
+
+type Person1={
+    name: string;
+    roll: number;
+}
+
+const person1:Person1={
+    name:"Nikhil",
+    roll:12
+}
+
+console.log("person1 name details",person1.name)
+
+type ID= string | number;
+let userID: ID="1";
+let orderID: ID=2;
+
+console.log(userID)
+console.log(orderID)
+
+//interface vs Type alias
+interface user1 {
+    name: string;
+    id: number;
+}
+
+interface customer extends user1{
+    order:string;
+}
+
+const bill : customer={
+    name: "Nikhil",
+    id:1,
+    order:"Tea"
+}
+
+type vehicle={
+    maker:string;
+    model:string;
+}
+
+// &-> intersection type
+type car=vehicle & {
+    isElectric:boolean;
+}
+
+const myCar:car={
+    maker:"TATA",
+    model:"TATA PUNCH",
+    isElectric:true
+}
+
+type add1=(a:number,b:number)=> number;
+ 
+let add1:add1= (x,y)=>x+y;
+console.log("Type function",add1(1,2))
+
+type status="active"|"inactive"|"pending";
+const Userstatus:status="pending";
+console.log(Userstatus)
+
+
+// difference -> rather than extending the interface can use same name interfaces but type alias can't do that 
+interface user3{
+    name: string,
+    roll: number,
+}
+interface user3{
+    subject:string
+}
+const student:user3 = {
+    name:"Nikhil",
+    roll:21,
+    subject: "Science"
+}
+console.log(student.name)
+
+
+//Can't perform this in type alias
+// type vehicle1={
+//     maker:string;
+//     model:string;
+// }
+// type vehicle1{
+//     isElectric:boolean;
+// }
+
+
+//Recursive type in type alias
+type Tree={
+    value:string;
+    children:Tree[];
+}
+
+const inherite :Tree={
+    value:"Parent",
+    children:[{
+        value:"Child",
+        children:[
+            {
+                value:"grandChild",
+                children:[]
+            }
+        ]
+    }]
+}
+
+console.log("Recursive inherite",inherite)

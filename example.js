@@ -43,10 +43,10 @@ function logmessage() {
 }
 // Type infernece  
 var user;
-// user =1;  error , it is assigned as string 
+// user =1; error , it is assigned as string 
 // Type assertions
 var strvalue = "Hello world";
-var strLenght = strvalue.length; //specifying the datatype of varibale   explicitively
+var strLenght = strvalue.length; //specifying the datatype of varibale explicitively
 // Union type
 var union;
 // union=2;  // both can be used 
@@ -79,3 +79,46 @@ var add = function (x, y) { return x + y; };
 var sub = function (x, y) { return x - y; };
 console.log(add(1, 2));
 console.log(sub(3, 2));
+var ID = "2";
+var person1 = {
+    name: "Nikhil",
+    roll: 12
+};
+console.log("person1 name details", person1.name);
+var userID = "1";
+var orderID = 2;
+console.log(userID);
+console.log(orderID);
+var bill = {
+    name: "Nikhil",
+    id: 1,
+    order: "Tea"
+};
+var myCar = {
+    maker: "TATA",
+    model: "TATA PUNCH",
+    isElectric: true
+};
+var add1 = function (x, y) { return x + y; };
+console.log("Type function", add1(1, 2));
+var Userstatus = "pending";
+console.log(Userstatus);
+var student = {
+    name: "Nikhil",
+    roll: 21,
+    subject: "Science"
+};
+console.log(student.name);
+var inherite = {
+    value: "Parent",
+    children: [{
+            value: "Child",
+            children: [
+                {
+                    value: "grandChild",
+                    children: []
+                }
+            ]
+        }]
+};
+console.log("Recursive inherite", inherite);
