@@ -1,48 +1,81 @@
-// ✅ Function to add numbers
-function AddNumbers(price, shipping) {
-    return price + shipping;
+function AddNumbers(pric, shipping) {
+    return pric + shipping;
 }
-console.log(AddNumbers(10, 12)); // Output: 22
-// ✅ Union type variable
+console.log(AddNumbers(10, 12));
 var Name = 22;
-// ✅ Using `any` type
 var roll = null;
-console.log(roll); // Output: null
-// ✅ Fix: Allowing both string & number values
-var arr = []; // Now allows both
+console.log(roll);
+var arr = [];
 arr[0] = "nikhil";
 arr[1] = 3;
-console.log(arr); // Output: ["nikhil", 3]
-// ✅ Object with optional property
-var objData = {
+console.log(arr);
+var obje = {
     name: "Nikhil",
     roll: 22,
     status: true,
 };
-console.log(objData.name); // Output: "Nikhil"
-// ✅ Fix: Initialize Account properly
-var Account = [];
-Account.push({ name: "John Doe", balance: 1000 });
-console.log(Account);
-// ✅ Enum example
-var Color;
-(function (Color) {
-    Color[Color["green"] = 0] = "green";
-    Color[Color["red"] = 1] = "red";
-    Color[Color["blue"] = 2] = "blue"; // 2
-})(Color || (Color = {}));
-console.log(Color.green); // Output: 0
-// ✅ Unknown type with type checking
-var unsure = "King";
-if (typeof unsure === 'number') {
-    console.log(unsure.toFixed(2));
+console.log(obje.name);
+var Account;
+var color;
+(function (color) {
+    color[color["green"] = 0] = "green";
+    color[color["red"] = 1] = "red";
+    color[color["blue"] = 2] = "blue";
+})(color || (color = {}));
+console.log(color.green);
+var notsure = "King";
+if (typeof (notsure) == 'number') {
+    notsure.toFixed(2);
 }
-else if (typeof unsure === "string") {
-    console.log("Length of the string:", unsure.length); // Output: Length of the string: 4
+else if (typeof (notsure) == "string") {
+    console.log("length of the string", notsure.length);
 }
-// ✅ Never type function (Infinite loop)
+// Never type, which are used were the function will never return , basically has no Endpoint.
 function infiniteLoop() {
     while (true) {
         console.log(1);
     }
 }
+//Void type, which are used when we don't wants to return anything, basically wants to return nothing
+function logmessage() {
+    console.log("testing void");
+    //return null;  will pass an error.
+}
+// Type infernece  
+var user;
+// user =1;  error , it is assigned as string 
+// Type assertions
+var strvalue = "Hello world";
+var strLenght = strvalue.length; //specifying the datatype of varibale   explicitively
+// Union type
+var union;
+// union=2;  // both can be used 
+// union="nikhil"; // both can be used 
+// Type narrowing 
+function printfn(id) {
+    if (typeof (id) == 'string') {
+        console.log("id is a string: ", id.toLocaleUpperCase());
+    }
+    else {
+        console.log("Id is a number ".concat(id));
+    }
+}
+printfn(10);
+printfn("Nikhil");
+function greet() {
+    console.log("working");
+}
+var person = {
+    name: "Nikhil",
+    userID: 21,
+    active: true,
+    // greet(){
+    //     console.log(2)
+    // }
+    greet: greet
+};
+person.greet();
+var add = function (x, y) { return x + y; };
+var sub = function (x, y) { return x - y; };
+console.log(add(1, 2));
+console.log(sub(3, 2));
