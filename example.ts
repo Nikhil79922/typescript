@@ -224,3 +224,24 @@ const inherite :Tree={
 }
 
 console.log("Recursive inherite",inherite)
+
+
+// Intersection types
+const config:{server:string; port:number} & {secure: boolean; timeout:number}={
+    server:'localhost',
+    port:8080,
+    secure:true,
+    timeout:5000
+}
+
+//Optinal feilds ----> denoted by "?"
+
+interface user5{
+    name: string,
+    roll?: number,
+}
+const Stud:user5={
+    name:"Nikhil"
+}
+
+console.log("optional properties",Stud.roll) //undefined

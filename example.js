@@ -122,3 +122,14 @@ var inherite = {
         }]
 };
 console.log("Recursive inherite", inherite);
+// Intersection types
+var config = {
+    server: 'localhost',
+    port: 8080,
+    secure: true,
+    timeout: 5000
+};
+var Stud = {
+    name: "Nikhil"
+};
+console.log("optional properties", Stud.roll);
