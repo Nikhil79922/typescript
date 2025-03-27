@@ -21,8 +21,6 @@ public accountNumber:number;
     return(`Total Balance left: ${this.balance}`);
  }
 }
-
-
 const B=new Bankdetails(1,100);
 console.log(B.deposit(20))
 console.log(B.withdraw(70))
