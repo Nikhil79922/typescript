@@ -21,7 +21,6 @@ async function fetchAndPrintGrid(docUrl) {
             console.log("❌ No valid data found in the document.");
             return;
         }
-        console.log(extractedData)
         const maxX = Math.max(...extractedData.map(item => item.x)) + 1;
         const maxY = Math.max(...extractedData.map(item => item.y)) + 1;
         let grid = Array.from({ length: maxY }, () => Array(maxX).fill(" "));
