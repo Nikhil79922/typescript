@@ -1,7 +1,6 @@
 // Type Guards :- specially used for union types
 //ways to use :- 1) typeof , 2) instanceof , 3) Custom type guard fn
 
-
 function printID(id:string |number){
     if(typeof id==="string"){
         console.log(`id is a string ${id}`)
