@@ -106,7 +106,6 @@ class circle {
         }
     }
 }
-
 const C= new circle(10);
 console.log(C.radius)
 C.radius=12;
