@@ -1,6 +1,5 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-
 async function fetchAndPrintGrid(docUrl) {
     try {
         const { data } = await axios.get(docUrl);
@@ -30,7 +29,7 @@ async function fetchAndPrintGrid(docUrl) {
         console.log("\n✅ ASCII Representation of Grid:\n");
         grid.forEach(row => console.log(row.join("")));
     } catch (error) {
-        console.error("❌ Error fetching document:", error.message);
+        console.error("Error fetching document:", error.message);
     }
 }
 const docUrl = "https://docs.google.com/document/d/e/2PACX-1vSZ1vDD85PCR1d5QC2XwbXClC1Kuh3a4u0y3VbTvTFQI53erafhUkGot24ulET8ZRqFSzYoi3pLTGwM/pub";
