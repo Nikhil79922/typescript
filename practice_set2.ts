@@ -1,5 +1,4 @@
 //1. solution :- 
-
 class Bankdetails{
 public accountNumber:number;
  private balance:number;
